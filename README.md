@@ -1,4 +1,8 @@
 # Savor-the-Feeling
 
-##Team-Members
-Phillip
+## Team Members
+
+### Phillip Bang
+### Stephen Blatt
+
+
