@@ -1,0 +1,83 @@
+// API LIST 
+Vision API --> for detecting mood
+Spotify API --> for seaching music
+GIPHY API for --> searching gifs
+Browser API --> for webcam
+
+1. If possible, utilize webcam to take real-time picture
+2. If not, upload pictures from computer to be analyzed
+
+
+// LAYOUT
+1. Click button to initiate the default webcam application on computer
+2. User takes a picture and uploads the recent picture taken > clicks "Upload"
+3. Picture is analyzed
+4. User is brought to the Results page
+5. Results page displays GIPHY gifs and plays Spotify music related to mood 
+
+
+// MOODS
+Key moods to hit: Joy / Sadness / Average 
+Joy  Very Likely
+Sorrow  Very Unlikely
+Anger  Very Unlikely
+Surprise  Very Unlikely
+Exposed  Very Unlikely
+Blurred  Very Unlikely
+Headwear  Very Unlikely
+
+
+// OVERVIEW
+Project Title --> Savor the Feeling
+Team Members
+    Adam Dowdy
+    Phillip B
+    Chinzo
+    Alex P
+    Stephen Blatt (TA)
+Project Description:
+    Grab the users mood and "savor" it by displaying gifs, playlists, and more according to their mood
+Sketch of Final Product
+    Slacked out
+APIs to be used
+    Vision API --> for detecting mood
+    Spotify API --> for seaching music
+    GIPHY API for --> searching gifs
+    Browser API --> for webcam
+Breakdown of Tasks (FOR WORKING PROTOTYPE, we will expand on this if we have time)
+    On home page, get user image from webcam or upload depending on what's easier
+    Send image to Vision API for analysis
+    Analyze image data
+        1. Try to get one of three moods :) :( :|
+        2. If can't get a mood, you are confused
+        3. If get a mood, display gifs and playlist according to that mood on results page
+
+
+// TIMELINE
+
+    Oct 1st - Monday:
+    Homepage Layout Completed
+    Webcam and / or Upload working, passing photo to and console.log(response) from Vision API
+
+    Oct 3rd - Wednesday:
+    Results Layout Completed
+    Emotion passed to and console.log(repsonse) from Giphy API
+
+    Oct 6th - Saturday:
+    Fix bugs if any
+    Emotion passed to and console.log(response) from Spotify API
+
+    Oct 8th - Monday:
+    Finalize App
+    Fully working prototype capable of detecting and displaying 4 emotions (Happy/Sad/Average/Confused)
+    Start adding support for the full spectrum of moods while thinking of another feature to finish
+
+    Oct 10th - Wednesday:
+    Add features / additional styling
+    Add support for the full spectrum of moods, not just the 4 we completed Monday
+
+    Oct 13th - Saturday
+    Due Date
+    Finalize everything, don't add any new features this day
+
+
