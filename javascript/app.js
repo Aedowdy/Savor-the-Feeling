@@ -1,5 +1,4 @@
 
-
 // WEBCAM CAPTURE =======================================
 
 // Grab elements, create settings, etc.
