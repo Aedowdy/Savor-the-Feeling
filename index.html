@@ -3,8 +3,6 @@ Vision API -- for detecting mood
 Spotify API -- for seaching music
 GIPHY API for -- searching gifs
 Browser API -- for webcam
-1. If possible, utilize webcam to take real-time picture
-2. If not, upload pictures from computer to be analyzed
 // LAYOUT
 1. Click button to initiate the default webcam application on computer
 2. User takes a picture and uploads the recent picture taken > clicks "Upload"
@@ -44,50 +42,60 @@ Breakdown of Tasks (FOR WORKING PROTOTYPE, we will expand on this if we have tim
         1. Try to get one of three moods :) :( :|
         2. If can't get a mood, you are confused
         3. If get a mood, display gifs and playlist according to that mood on results page
+
+
+
 // TIMELINE
+
     Oct 1st - Monday:
     Homepage Layout Completed
     Webcam and / or Upload working, passing photo to and console.log(response) from Vision API
+
     Oct 3rd - Wednesday:
     Results Layout Completed
     Emotion passed to and console.log(repsonse) from Giphy API
+
     Oct 6th - Saturday:
     Fix bugs if any
     Emotion passed to and console.log(response) from Spotify API
+
     Oct 8th - Monday:
     Finalize App
     Fully working prototype capable of detecting and displaying 4 emotions (Happy/Sad/Average/Confused)
     Start adding support for the full spectrum of moods while thinking of another feature to finish
+
+
     Oct 10th - Wednesday:
     Add features / additional styling
     Add support for the full spectrum of moods, not just the 4 we completed Monday
+
     Oct 13th - Saturday
     Due Date
     Finalize everything, don't add any new features this day -->
 
+<!DOCTYPE html>
+<html lang="en">
 
-    <!DOCTYPE html>
-    <html lang="en">
-    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-        <head>
-            <meta charset="utf-8">
-            <link rel="stylesheet" href="css/stylesheet.css">
-            <title>Savor the Feeling</title>
-        </head>
-    
-    <body>
-    
-        <!-- WEBCAM HTML -->
-        <video id="video" width="640" height="480" autoplay></video>
-        <button id="snap">Snap a Picture</button>
-        <canvas id="canvas" width="640" height="480"></canvas>
-    
-        <script src="javascript/app.js"></script>
-    </body>
-    
-    </html>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/stylesheet.css">
+        <title>Savor the Feeling</title>
+    </head>
+
+<body>
+
+    <!-- WEBCAM HTML -->
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="snap">Snap a Picture</button>
+    <canvas id="canvas" width="640" height="480"></canvas>
+
+    <script src="javascript/app.js"></script>
+</body>
+
+</html>
+
