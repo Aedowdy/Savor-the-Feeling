@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+    background-image: url("")
+}
+
+.nav{
+    background-color: dimgray;
+}
+.nav-link > active {
+    color: black;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: dimgrey;
+}
+
+h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
+}
+
+p {
+    font-family: 'Lobster', cursive;
+    color: whitesmoke;
+    font-size: 20px;
+}
