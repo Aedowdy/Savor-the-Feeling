@@ -10,7 +10,6 @@ body {
     font-family: 'Lobster', cursive;
     font-size: 30px;
 }
-
 .jumbotron {
     text-align: center;
     background-color: dimgray;
@@ -30,4 +29,8 @@ h3 {
 
 .selfieContainer {
     margin-left: 225px;
+}
+
+#submit {
+    margin-left: 505px;
 }
