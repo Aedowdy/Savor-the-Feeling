@@ -6,14 +6,13 @@ body {
     background-color: dimgray;
 }
 #topNav {
-    color: green;
+    color: whitesmoke;
     font-family: 'Lobster', cursive;
     font-size: 30px;
 }
-
 .jumbotron {
     text-align: center;
-    background-color: dimgrey;
+    background-color: dimgray;
 }
 
 h1 {
@@ -29,5 +28,9 @@ h3 {
 }
 
 .selfieContainer {
-    margin-left: 245px;
+    margin-left: 225px;
+}
+
+#submit {
+    margin-left: 505px;
 }
