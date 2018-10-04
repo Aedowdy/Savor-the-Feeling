@@ -24,9 +24,10 @@ h1 {
 h3 {
     font-family: 'Lobster', cursive;
     color: whitesmoke;
+
     font-size: 30px;
 }
 
 .selfieContainer {
-    margin-left: 250px;
+    margin-left: 245px;
 }
