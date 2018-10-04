@@ -1,13 +1,14 @@
 body {
     background-color: black;
-    background-image: url("")
 }
 
 .nav{
     background-color: dimgray;
 }
-.nav-link > active {
-    color: black;
+#topNav {
+    color: green;
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
 }
 
 .jumbotron {
@@ -20,8 +21,8 @@ h1 {
     font-size: 50px;
 }
 
-p {
+h3 {
     font-family: 'Lobster', cursive;
     color: whitesmoke;
-    font-size: 20px;
+    font-size: 30px;
 }
