@@ -13,6 +13,22 @@
 </head>
 
 <body>
+
+    <style>
+        body {
+            background-image: url("assets/images/forrestImage.jpg");
+        }
+    </style>
+    <!-- Main container for all Content -->
+    <div class="container">
+
+        <!-- Header with home link -->
+        <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link active" id="topNav" href="#">Home</a>
+                </li>
+              </ul>
+
   <!-- Main container for all Content -->
   <div class="container">
 
@@ -25,10 +41,20 @@
 
     <br>
 
+
     <!-- Jumbotron -->
     <div class="jumbotron">
       <h1 class="display-4">Take a Selfie, and we will provide you with gifs and music to match your mood!</h1>
       <br>
+
+
+            <!-- Jumbotron -->
+            <div class="jumbotron">
+                    <h1 class="display-4">Savor Your Feeling!!!</h1>
+                    <h3>Take a selfie, and we will provide you with gifs and music to match your mood!</h3>
+                    <br>
+                    <a class="btn btn-success btn-lg" href="#" role="button" id="snap">Take a Snap!</a>
+                  </div>
 
 
       <a class="btn btn-success btn-lg" href="#" role="button" id="snap">Take a Snap!</a>
@@ -42,11 +68,21 @@
       <canvas id="canvas" width="320" height="240"></canvas>
 
 
+        <!-- Container for the webcam launch -->
+        <div class="selfieContainer">
+        <video id="video" width="320" height="240" autoplay></video>
+        <canvas id="canvas" width="320" height="240"></canvas>
+  
+
+    </div>
+<script src="assets/javascript/app.js"></script>    
+
 
     </div>
 
   </div>
   <script src="assets/javascript/app.js"></script>
+
 </body>
 
 </html>
