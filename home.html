@@ -29,19 +29,20 @@
 
             <!-- Jumbotron -->
             <div class="jumbotron">
-                    <h1 class="display-4">Savor Your Feeling!</h1>
+                    <h1 class="display-4">Savor Your Feeling!!!</h1>
                     <h3>Take a selfie, and we will provide you with gifs and music to match your mood!</h3>
                     <br>
-                    <a class="btn btn-success btn-lg" href="#" role="button">Launch Webcam!</a>
+                    <a class="btn btn-success btn-lg" href="#" role="button" id="snap">Take a Snap!</a>
                   </div>
 
 
-            <!-- Container for the webcam launch -->
-            <div class="selfieContainer">
-
-            </div>
+        <!-- Container for the webcam launch -->
+        <div class="selfieContainer">
+        <video id="video" width="320" height="240" autoplay></video>
+        <canvas id="canvas" width="320" height="240"></canvas>
+  
 
     </div>
-    
+<script src="assets/javascript/app.js"></script>    
 </body>
 </html>
