@@ -26,8 +26,8 @@ function processImage() {
   };
 
   // Display the image.
-  var sourceImageUrl = document.getElementById("inputImage").value;
-  document.querySelector("#sourceImage").src = sourceImageUrl;
+  var sourceImage = document.getElementById("inputImage").value;
+  document.querySelector("#sourceImage").src = sourceImage;
 
   // Perform the REST API call.
   $.ajax({
@@ -42,13 +42,16 @@ function processImage() {
     type: "POST",
 
     // Request body.
-    data: '{"url": ' + '"' + sourceImageUrl + '"}'
+    data: '{"url": ' + '"' + sourceImageUrl + '"}' // pull the Canvas ID
   })
 
     .done(function(data) {
       // Show formatted JSON on webpage.
       $("#responseTextArea").val(JSON.stringify(data, null, 2));
+
+      var test = datafaceAttributes.emotion.anger[0];
       console.log(data);
+      console.log(test);
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
@@ -72,21 +75,28 @@ function processImage() {
 // Grab elements, create settings, etc.
 var video = document.getElementById("video");
 
-// Get access to the camera!
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-  // Not adding `{ audio: true }` since we only want video now
-  navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-    video.src = window.URL.createObjectURL(stream);
-    video.play();
-  });
-}
-
 // Elements for taking the snapshot
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 var video = document.getElementById("video");
 
+$("#cameraSnap").hide();
+
+// Get access to the camera!
+$("#cameraStart").on("click", function() {
+
+   $(this).hide(); 
+   $("#cameraSnap").show();
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    // Not adding `{ audio: true }` since we only want video now
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+      video.src = window.URL.createObjectURL(stream);
+      video.play();
+    });
+  }
+});
+
 // Trigger photo take
-document.getElementById("snap").addEventListener("click", function() {
+$("#cameraSnap").on("click", function() {
   context.drawImage(video, 0, 0, 320, 240);
 });
