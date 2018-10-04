@@ -81,6 +81,7 @@ var context = canvas.getContext("2d");
 var video = document.getElementById("video");
 
 $("#cameraSnap").hide();
+$("#submit").hide();
 
 // Get access to the camera!
 $("#cameraStart").on("click", function() {
@@ -99,4 +100,7 @@ $("#cameraStart").on("click", function() {
 // Trigger photo take
 $("#cameraSnap").on("click", function() {
   context.drawImage(video, 0, 0, 320, 240);
+
+  $("#submit").show();  
+
 });
