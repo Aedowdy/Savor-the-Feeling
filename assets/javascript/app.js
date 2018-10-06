@@ -1,106 +1,82 @@
-// VISION API ====================================
+//list of emotions
+// anger: 0
+// contempt: 0.002
+// disgust: 0
+// fear: 0
+// happiness: 0.001
+// neutral: 0.991
+// sadness: 0.005
+// surprise: 0
 
-function processImage() {
-  // Replace <Subscription Key> with your valid subscription key.
-  // Free trial key only lasts 7 days, good until 9-8-18
-  var subscriptionKey = "7e04d168a4614ef088fbd8b6b1eb4d00";
-
-  // NOTE: You must use the same region in your REST call as you used to
-  // obtain your subscription keys. For example, if you obtained your
-  // subscription keys from westus, replace "westcentralus" in the URL
-  // below with "westus".
-  //
-  // Free trial subscription keys are generated in the westcentralus region.
-  // If you use a free trial subscription key, you shouldn't need to change
-  // this region.
-  var uriBase =
-    "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
-
-  // Request parameters.
-  var params = {
-    returnFaceId: "true",
-    returnFaceLandmarks: "false",
-    returnFaceAttributes:
-      "age,gender,headPose,smile,facialHair,glasses,emotion," +
-      "hair,makeup,occlusion,accessories,blur,exposure,noise"
-  };
-
-  // Display the image.
-  var sourceImage = document.getElementById("inputImage").value;
-  document.querySelector("#sourceImage").src = sourceImage;
-
-  // Perform the REST API call.
-  $.ajax({
-    url: uriBase + "?" + $.param(params),
-
-    // Request headers.
-    beforeSend: function(xhrObj) {
-      xhrObj.setRequestHeader("Content-Type", "application/json");
-      xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
-    },
-
-    type: "POST",
-
-    // Request body.
-    data: '{"url": ' + '"' + sourceImageUrl + '"}' // pull the Canvas ID
-  })
-
-    .done(function(data) {
-      // Show formatted JSON on webpage.
-      $("#responseTextArea").val(JSON.stringify(data, null, 2));
-
-      var test = datafaceAttributes.emotion.anger[0];
-      console.log(data);
-      console.log(test);
-    })
-
-    .fail(function(jqXHR, textStatus, errorThrown) {
-      // Display error message.
-      var errorString =
-        errorThrown === ""
-          ? "Error. "
-          : errorThrown + " (" + jqXHR.status + "): ";
-      errorString +=
-        jqXHR.responseText === ""
-          ? ""
-          : jQuery.parseJSON(jqXHR.responseText).message
-            ? jQuery.parseJSON(jqXHR.responseText).message
-            : jQuery.parseJSON(jqXHR.responseText).error.message;
-      alert(errorString);
-    });
-}
-
-// WEBCAM CAPTURE =======================================
-
-// Grab elements, create settings, etc.
-var video = document.getElementById("video");
-
-// Elements for taking the snapshot
-var canvas = document.getElementById("canvas");
-var context = canvas.getContext("2d");
-var video = document.getElementById("video");
-
-$("#cameraSnap").hide();
-$("#submit").hide();
-
-// Get access to the camera!
-$("#cameraStart").on("click", function() {
-
-   $(this).hide(); 
-   $("#cameraSnap").show();
-  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    // Not adding `{ audio: true }` since we only want video now
-    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-      video.src = window.URL.createObjectURL(stream);
-      video.play();
-    });
-  }
+Webcam.set({
+  width: 320,
+  height: 240,
+  image_format: 'jpeg',
+  jpeg_quality: 90
 });
+Webcam.attach('#my_camera');
 
-// Trigger photo take
-$("#cameraSnap").on("click", function() {
-  context.drawImage(video, 0, 0, 320, 240);
+var canvas = document.getElementById('viewport')
+var context = canvas.getContext('2d');
+var emotion = "confused";
 
-  $("#submit").show();  
+function take_snapshot() {
+  // take snapshot and get image data
+  Webcam.snap(function(e) {
+    base_image = new Image();
+    base_image.src = e;
+    base_image.onload = function() {
+      context.drawImage(base_image, 0, 0, 320, 240);
 
-});
+      let data = canvas.toDataURL('image/jpeg');
+
+      fetch(data)
+      .then(res => res.blob())
+      .then(blobData => {
+        $.post({
+          url: "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceAttributes=emotion",
+          contentType: "application/octet-stream",
+          headers: {
+            'Ocp-Apim-Subscription-Key': '7e04d168a4614ef088fbd8b6b1eb4d00'
+          },
+          processData: false,
+          data: blobData
+        })
+        .done(function(data) {
+          console.log(data);
+
+          if (data["0"].faceAttributes.emotion.anger > 0.6) {
+            $("#emotionStatement").text("Wow you are ANGRY!");
+            emotion = "angry";
+          }
+          else if (data["0"].faceAttributes.emotion.happiness > 0.6) {
+            $("#emotionStatement").text("Wow you are HAPPY!");
+            emotion = "happy";
+          }
+          else if (data["0"].faceAttributes.emotion.sadness > 0.6) {
+            $("#emotionStatement").text("Wow you are SAD!");
+            emotion = "sadness";
+          }
+          else if (data["0"].faceAttributes.emotion.neutral > 0.6) {
+            $("#emotionStatement").text("Wow you FEEL NOTHING!");
+            emotion = "bleek";
+          }
+          else {
+            $("#emotionStatement").text("I'm CONFUSED! You're like my boss, I can never tell what you're thinking!");
+          }
+
+
+          //call giphy api with var emotion
+          //
+          //
+          //
+
+        })
+        .fail(function(err) {
+          console.log(err);
+          // $("#results").text(JSON.stringify(err));
+        })
+      });
+    }
+  });
+};
