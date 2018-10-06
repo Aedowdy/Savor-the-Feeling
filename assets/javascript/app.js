@@ -1,3 +1,5 @@
+// WEBCAM API ===================================
+
 //list of emotions
 // anger: 0
 // contempt: 0.002
@@ -82,6 +84,8 @@ function take_snapshot() {
   });
 }
 
+// GIPHY API =========================================
+
 function emotionFunction(emotion) {
   // when animalContent is called, the input text is assigned a data-name attribute
   var queryURL =
@@ -109,3 +113,11 @@ function emotionFunction(emotion) {
     }
   });
 }
+
+// YOUTUBE API ===============================
+
+
+      // Client ID and API key from the Developer Console
+      var CLIENT_ID = '<354590734259-ekn605em0k9odugm8c27b1dhohlms2b3.apps.googleusercontent.com>';
+
+      

@@ -17,14 +17,6 @@
   <!-- Main container for all Content -->
   <div class="container">
 
-    <!-- Header with home link -->
-    <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link active" id="topNav" href="#">Home</a>
-      </li>
-    </ul>
-
-    <br>
     <!-- Jumbotron -->
     <div class="jumbotron">
       <h1 class="display-4">Savor Your Feeling!!!</h1>
@@ -35,31 +27,46 @@
     </div>
 
 
-    <div class="selfieContainer">
       <div class="row">
-        <div class="col">
-        </div> <div id="my_camera"></div>
-      </div>
-      <div class="col">
-        <canvas id="viewport" width="320" height="240"></canvas>
+        <div class="col-sm-6">
+          <div style="float:right;" id="my_camera"></div>
+        </div>
+        <div class="col-sm-6">
+          <canvas id="viewport" width="320" height="240"></canvas>
+        </div>
       </div>
     </div>
 
-  </div>
-  
-
-
-  <br />
-  <h1 id="emotionStatement"></h1>
+    <br/>
+    
   </div>
 
-
-  <div id="images">
+<div class="row">
+  <div class="col-md-10 mx-auto">
+      <h1 id="emotionStatement"></h1><b/>
+      <div id="images">
+        </div>
   </div>
+</div>
+
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="webcam.js"></script>
   <script src="assets/javascript/app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+  
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBfPhUV9Eofaz5l1E9r2sQaofrKLy5JGl4",
+    authDomain: "savor-the-feeling-580b7.firebaseapp.com",
+    databaseURL: "https://savor-the-feeling-580b7.firebaseio.com",
+    projectId: "savor-the-feeling-580b7",
+    storageBucket: "savor-the-feeling-580b7.appspot.com",
+    messagingSenderId: "734740547906"
+  };
+  firebase.initializeApp(config);
+</script>
 </body>
 
 </html>
