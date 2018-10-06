@@ -1,7 +1,9 @@
 body {
     background-color: black;
+    background-image: url("assets/images/forrestImage.jpg");
+    background-size: cover;
+    background-position: center;
 }
-
 .nav{
     background-color: dimgray;
 }
@@ -14,23 +16,29 @@ body {
     text-align: center;
     background-color: dimgray;
 }
-
 h1 {
     font-family: 'Lobster', cursive;
     font-size: 50px;
 }
-
 h3 {
     font-family: 'Lobster', cursive;
     color: whitesmoke;
 
     font-size: 30px;
 }
-
 .selfieContainer {
-    margin-left: 225px;
+    /* margin-left: 225px; */
+    /* width: 100%; */
+    margin-left: auto;
+    margin-right: auto;
 }
+#emotionStatement {
+  color: white;
+  padding: 20px;
+}
+#my_camera {
 
+}
 #submit {
     margin-left: 505px;
 }
