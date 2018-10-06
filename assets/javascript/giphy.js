@@ -97,7 +97,7 @@ function emotionFunction(emotion) {
      // when animalContent is called, the input text is assigned a data-name attribute
     var queryURL =
       "https://api.giphy.com/v1/gifs/search?&api_key=8JwY8uq5blrbErSRt2G6FomhnlwmuO1s&limit=4&q=" +
-      emotion;
+      sad;
   
     $.ajax({
       url: queryURL,
@@ -108,25 +108,10 @@ function emotionFunction(emotion) {
   
       for (var i = 0; i < emotionData.length; i++) {
 
-        imgURL = response.data[i].images.original.url;
-  
-        // creating a div to store both rating and imgURL
-        var emotionDiv = $("<div class='emotion'>");
-  
-        // creating a div for the gif image
-        var emotionImage = $("<img>");
-        emotionImage.addClass("gif");
-        emotionImage.attr("data-state", "still");
-        emotionImage.attr("data-still", imgURLstill);
-        emotionImage.attr("data-animate", imgURLanimate);
-        
+        imgURL = response.data[0].url;
 
-  
-        // appending both topicImage and topicRating to topicDiv
-        topicDiv.append(topicImage);
-  
-        // placing topicDiv before the already created topic-view ID div
-        $("#topic-view").prepend(topicDiv);
+        console.log (imgURL);
+
       }
     });
   }

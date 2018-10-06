@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    background-image: url("assets/images/forrestImage.jpg");
+    background-image: url("../images/forrestImage.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -36,9 +36,16 @@ h3 {
   color: white;
   padding: 20px;
 }
-#my_camera {
+/* #my_camera {
 
+} */
+
+.selfieContainer {
+    padding-left: 225px;
 }
+
+
+
 #submit {
     margin-left: 505px;
 }
