@@ -14,8 +14,7 @@ body {
 }
 .jumbotron {
     text-align: center;
-    background-color: white;
-    opacity: 0.7;
+    background-color: rgba(255, 255, 255, 0.15);
 }
 h1 {
     font-family: 'Lobster', cursive;
@@ -23,8 +22,9 @@ h1 {
 }
 h3 {
     font-family: 'Lobster', cursive;
-    color: rgba(176, 196, 222, 0.858);
+    color: lightslategray;
     font-size: 30px;
+    text-align: center;
 }
 #emotionStatement {
   color: white;
@@ -68,7 +68,7 @@ h3 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(176, 196, 222, 0.858);
+    background: rgba(255, 136, 84, 0.5);
     border-radius: 100%;
     -webkit-transform: scale(0);
     transform: scale(0);
