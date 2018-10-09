@@ -42,7 +42,7 @@ function take_snapshot() {
               "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceAttributes=emotion",
             contentType: "application/octet-stream",
             headers: {
-              "Ocp-Apim-Subscription-Key": "7e04d168a4614ef088fbd8b6b1eb4d00"
+              "Ocp-Apim-Subscription-Key": "056ef7124c404f6692529258ee945cb2"
             },
             processData: false,
             data: blobData
