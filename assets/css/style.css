@@ -7,11 +7,11 @@ body {
 .nav{
     background-color: dimgray;
 }
-#topNav {
+/* #topNav {
     color: whitesmoke;
     font-family: 'Lobster', cursive;
     font-size: 30px;
-}
+} */
 .jumbotron {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.15);
@@ -88,6 +88,10 @@ h3 {
   }
 
 
-#submit {
-    margin-left: 505px;
+
+.imageSize {
+    height: auto;
+    width: 200px;
+    margin: 0 auto;
+    display: inline-block;
 }

@@ -24,50 +24,52 @@
       <hr class="my-4">
       <h3>Take a selfie. <br> We will provide you with gifs and music to match your mood.</h3>
       <br>
-      <a class="btn btn-danger btn-lg hvr-radial-out" href="#" role="button" id="cameraSnap" onClick="take_snapshot()">Snap Picture</a>
+      <a class="btn btn-danger btn-lg hvr-radial-out" href="#" role="button" id="cameraSnap" onClick="take_snapshot()">Snap
+        Picture</a>
     </div>
 
 
-      <div class="row">
-        <div class="col-sm-6">
-          <div style="float:right;" id="my_camera"></div>
-        </div>
-        <div class="col-sm-6">
-          <canvas id="viewport" width="320" height="240"></canvas>
-        </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div style="float:right;" id="my_camera"></div>
+      </div>
+      <div class="col-sm-6">
+        <canvas id="viewport" width="320" height="240"></canvas>
       </div>
     </div>
-
-    <br/>
-    
   </div>
 
-<div class="row">
-  <div class="col-md-10 mx-auto">
-      <h1 id="emotionStatement"></h1><b/>
-      <div id="images">
-        </div>
+  <br />
+
   </div>
-</div>
+
+  <div class="row">
+    <div class="col-md-10 mx-auto">
+      <h1 id="emotionStatement"></h1>
+
+        <div class="images"></div>
+
+    </div>
+  </div>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="webcam.js"></script>
   <script src="assets/javascript/app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
-  
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBfPhUV9Eofaz5l1E9r2sQaofrKLy5JGl4",
-    authDomain: "savor-the-feeling-580b7.firebaseapp.com",
-    databaseURL: "https://savor-the-feeling-580b7.firebaseio.com",
-    projectId: "savor-the-feeling-580b7",
-    storageBucket: "savor-the-feeling-580b7.appspot.com",
-    messagingSenderId: "734740547906"
-  };
-  firebase.initializeApp(config);
-</script>
+
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBfPhUV9Eofaz5l1E9r2sQaofrKLy5JGl4",
+      authDomain: "savor-the-feeling-580b7.firebaseapp.com",
+      databaseURL: "https://savor-the-feeling-580b7.firebaseio.com",
+      projectId: "savor-the-feeling-580b7",
+      storageBucket: "savor-the-feeling-580b7.appspot.com",
+      messagingSenderId: "734740547906"
+    };
+    firebase.initializeApp(config);
+  </script>
 </body>
 
 </html>

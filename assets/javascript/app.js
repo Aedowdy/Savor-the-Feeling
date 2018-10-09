@@ -24,7 +24,7 @@ var emotion = "confused";
 
 function take_snapshot() {
 
-  $("#images").empty();
+  $(".images").empty();
   // take snapshot and get image data
   Webcam.snap(function(e) {
     base_image = new Image();
@@ -89,7 +89,7 @@ function take_snapshot() {
 function emotionFunction(emotion) {
   // when animalContent is called, the input text is assigned a data-name attribute
   var queryURL =
-    "https://api.giphy.com/v1/gifs/search?&api_key=8JwY8uq5blrbErSRt2G6FomhnlwmuO1s&limit=10&q=" +
+    "https://api.giphy.com/v1/gifs/search?&api_key=8JwY8uq5blrbErSRt2G6FomhnlwmuO1s&limit=12&q=" +
     emotion;
 
   $.ajax({
@@ -107,9 +107,10 @@ function emotionFunction(emotion) {
       var emotionGif = $("<img>");
       emotionGif.attr("src", imgURL);
       emotionGif.attr("alt", emotion);
-
+      emotionGif.addClass("imageSize")
+  
       console.log (imgURL);
-      $("#images").prepend(emotionGif);
+      $(".images").append(emotionGif);
     }
   });
 }
