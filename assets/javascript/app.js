@@ -50,7 +50,7 @@ function take_snapshot() {
             .done(function(data) {
               console.log(data);
 
-              if (data["0"].faceAttributes.emotion.anger > 0.6) {
+              if (data["0"].faceAttributes.emotion.anger > 0.4) {
                 $("#emotionStatement").text("Wow you are ANGRY!");
                 emotion = "angry";
               } else if (data["0"].faceAttributes.emotion.happiness > 0.6) {
@@ -121,4 +121,4 @@ function emotionFunction(emotion) {
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '<354590734259-ekn605em0k9odugm8c27b1dhohlms2b3.apps.googleusercontent.com>';
 
-      
+
